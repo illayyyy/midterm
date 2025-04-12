@@ -1,7 +1,6 @@
-import React from 'react';
-
-const Flag = ({ flagUrl }) => {
-  return <img src={flagUrl} alt="Country Flag" className="w-full h-auto" />;
-};
-
-export default Flag;
+const Flag = ({ flagUrl }) => (
+    <img src={flagUrl} alt="Flag" width="200" />
+  );
+  
+  export default Flag;
+  

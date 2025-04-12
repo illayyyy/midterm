@@ -1,16 +1,17 @@
-import React from 'react';
-
-const Borders = ({ borders, onSelectBorder }) => {
-  return (
-    <div>
-      <strong>Borders:</strong>
-      <ul>
-        {borders ? borders.map((border, index) => (
-          <li key={index} onClick={() => onSelectBorder(border)}>{border}</li>
-        )) : 'No borders'}
-      </ul>
-    </div>
-  );
-};
-
-export default Borders;
+const Borders = ({ borders }) => {
+    if (!borders || borders.length === 0) return <p>No bordering countries</p>;
+  
+    return (
+      <div>
+        <strong>Borders:</strong>
+        <ul>
+          {borders.map((code) => (
+            <li key={code}>{code}</li> // Optional: Map codes to names if needed
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  export default Borders;
+  
