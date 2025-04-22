@@ -463,3 +463,185 @@ footer a:hover {
   color: var(--text-color);
   font-size: 16px;
 }
+
+
+/* Add these styles to your App.css file */
+
+.search-box {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Make sure the input has a higher z-index than other elements but lower than suggestions */
+.input {
+  z-index: 1;
+  position: relative;
+}
+
+/* Replace the filter dropdown styles with these improved styles */
+
+/* Filter styles */
+.filters-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.filter-toggle-button,
+.reset-filters-button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.filter-toggle-button:hover,
+.reset-filters-button:hover {
+  background-color: #e0e0e0;
+}
+
+.filters-panel {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for filters */
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+@media (min-width: 640px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  appearance: menulist; /* Show dropdown arrow */
+  height: 40px; /* Consistent height */
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #aaa;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.active-filters {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.active-filters p {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.active-filters ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.active-filters li {
+  font-size: 14px;
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+}
+
+.filtered-count {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.country-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.country-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.country-button:hover {
+  background-color: #e0e0e0;
+}
