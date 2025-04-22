@@ -41,7 +41,7 @@ const App = () => {
       .catch((error) => {
         console.error("API error:", error)
         setCountry(null)
-        setError("Something went wrong.")
+        setError("Country does not exist.")
       })
       .finally(() => {
         setIsLoading(false)

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-text">
-       -------------------------------------------------------------------------------------------------------------------
+       This is the end.
       </div>
     </footer>
   );
