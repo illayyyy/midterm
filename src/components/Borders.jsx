@@ -1,35 +1,28 @@
-const Borders = ({ borders }) => {
-    if (!borders || borders.length === 0) return <p style={styles.noBorders}>No bordering countries</p>;
-  
-    return (
-      <div style={styles.bordersContainer}>
-        <strong>Borders:</strong>
-        <ul style={styles.bordersList}>
-          {borders.map((code) => (
-            <li key={code} style={styles.bordersItem}>{code}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-  
-  const styles = {
-    bordersContainer: {
-      marginTop: '20px',
-      textAlign: 'left',
-    },
-    bordersList: {
-      listStyleType: 'none',
-      padding: 0,
-    },
-    bordersItem: {
-      padding: '5px 0',
-    },
-    noBorders: {
-      color: '#ff6f61',
-      fontStyle: 'italic',
-    }
-  };
-  
-  export default Borders;
-  
+const Borders = ({ borders, onBorderClick }) => {
+  if (!borders || borders.length === 0)
+    return <p className="no-borders">No bordering countries</p>;
+
+  return (
+    <div className="borders-container">
+      <strong>Borders:</strong>
+      <ul className="borders-list">
+        {borders.map((code) => (
+          <li
+            key={code}
+            className="borders-item"
+            onClick={() => onBorderClick(code)}
+            style={{
+              cursor: 'pointer',
+              color: '#1976d2',
+              textDecoration: 'blink',
+            }}
+          >
+            {code}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Borders;
