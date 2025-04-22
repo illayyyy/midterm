@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <div className="header-content">
-        <h1>Country Explorer</h1>
+        <h1>Visualizing Country Information</h1>
         <ThemeToggle />
       </div>
     </header>
